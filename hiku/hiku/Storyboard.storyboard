@@ -64,7 +64,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="AsleName_title" text="AsleName :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GuR-h1-nZK">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="AsleName_title" text="Aisle Name :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GuR-h1-nZK">
                                 <rect key="frame" x="20" y="165" width="255" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -108,7 +108,6 @@
         <!--Navigation Controller-->
         <scene sceneID="xCH-5G-C0m">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Vt8-oA-hNH" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TTx-JV-6wU" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="C0Y-bf-4E9">
@@ -124,13 +123,13 @@
                         <segue destination="ksi-5f-aaL" kind="relationship" relationship="rootViewController" id="P9z-Un-NZ2"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vt8-oA-hNH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="231" y="-14"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5xp-F9-tF0">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gQU-PA-oA0" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OGX-e0-Flj" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Wdt-k9-oDZ">
@@ -142,6 +141,7 @@
                         <segue destination="E0G-EP-aIo" kind="relationship" relationship="rootViewController" id="Nvg-Z0-g97"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gQU-PA-oA0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1145" y="-20"/>
         </scene>
