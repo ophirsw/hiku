@@ -29,6 +29,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+     // OS: make async call to populate the data and refresh the ListViewController
     [self makeListItemRequests];
     
     // Uncomment the following line to preserve selection between presentations.
@@ -67,6 +68,7 @@
     return cell;
 }
 
+// OS: make async call to populate the data and refresh the ListViewController
 -(void)makeListItemRequests
 {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
@@ -80,7 +82,7 @@
     }];
 }
 
-
+// OS: pass data to from master view to detail view when selecting a specific item in master view list
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"ShowDetails"]) {

@@ -13,13 +13,14 @@
 @end
 
 @implementation ItemViewController
+
+ // OS: getters and setters for data
 @synthesize data;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
     }
     return self;
 }

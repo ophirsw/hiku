@@ -12,8 +12,8 @@
 @implementation GetParamsUrlUtil
 
 
+// OS: prepare parameters for the API
 +(NSDictionary*)GetParamsUrl {
-    // fetch the data from the API
     NSString *timeUTC = [self getTimeNowUTC];
     NSString *sha256hashSign = [self sha256hash:[NSString stringWithFormat:@"%@%@%@", appID, secret, timeUTC]];
     return @{@"app_id": appID,@"sig":sha256hashSign,@"time":timeUTC,@"token":token};

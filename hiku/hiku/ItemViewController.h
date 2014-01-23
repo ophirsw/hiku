@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface ItemViewController : UIViewController {
+    // OS: labels to show the detailed data
     IBOutlet UILabel *labelName_Value;
     IBOutlet UILabel *labelAisleName_Value;
 }
