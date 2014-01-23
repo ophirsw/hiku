@@ -6,7 +6,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "JSON.h"
 
 //URl for Geting List
 static NSString *APIGetListURL = @"http://hiku-staging.herokuapp.com/api/v1/list";
