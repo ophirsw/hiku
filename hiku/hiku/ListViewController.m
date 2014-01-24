@@ -10,6 +10,7 @@
 #import "GetParamsUrlUtil.h"
 #import "AFNetworking.h"
 #import "ItemViewController.h"
+#import "MBProgressHUD.h"
 
 @interface ListViewController ()
 
@@ -30,6 +31,7 @@
 {
     [super viewDidLoad];
      // OS: make async call to populate the data and refresh the ListViewController
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [self makeListItemRequests];
     
     // Uncomment the following line to preserve selection between presentations.
@@ -77,6 +79,7 @@
         NSLog(@"JSON: %@", responseObject);
         NSLog(@"return: %@", [[[responseObject objectForKey:@"response"] objectForKey:@"data"] objectForKey:@"list"]);
         [self.tableView reloadData];
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
     }];

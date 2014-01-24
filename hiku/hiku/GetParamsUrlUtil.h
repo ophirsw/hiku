@@ -7,7 +7,7 @@
 
 #import <Foundation/Foundation.h>
 
-//OS : URl for Geting List API
+//OS : URl for geting List API
 static NSString *APIGetListURL = @"http://hiku-staging.herokuapp.com/api/v1/list";
 
 //OS : appId&Secret&token definition
