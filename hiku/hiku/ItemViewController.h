@@ -13,6 +13,6 @@
     IBOutlet UILabel *labelName_Value;
     IBOutlet UILabel *labelAisleName_Value;
 }
-@property (strong, nonatomic) NSDictionary *data;
+@property (strong, nonatomic) NSDictionary *itemData;
 
 @end

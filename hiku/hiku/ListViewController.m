@@ -11,12 +11,15 @@
 #import "AFNetworking.h"
 #import "ItemViewController.h"
 #import "MBProgressHUD.h"
+#import "PersistenceUtil.h"
 
 @interface ListViewController ()
 
 @end
 
 @implementation ListViewController
+
+@synthesize listItemData;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -31,7 +34,11 @@
 {
     [super viewDidLoad];
      // OS: make async call to populate the data and refresh the ListViewController
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+   
+    listItemData = [PersistenceUtil LoadArray];
+    if(self.listItemData == (id)[NSNull null] || [self.listItemData  count] == 0 ){
+         [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    }
     [self makeListItemRequests];
     
     // Uncomment the following line to preserve selection between presentations.
@@ -58,14 +65,14 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [self.listItemArrayFromAFNetworking count];
+    return [self.listItemData count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"ListItem";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    NSDictionary *tempDictionary= [self.listItemArrayFromAFNetworking objectAtIndex:indexPath.row];
+    NSDictionary *tempDictionary= [self.listItemData objectAtIndex:indexPath.row];
     cell.textLabel.text = [tempDictionary objectForKey:@"name"];
     return cell;
 }
@@ -75,9 +82,8 @@
 {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager GET:APIGetListURL parameters:[GetParamsUrlUtil GetParamsUrl] success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        self.listItemArrayFromAFNetworking = [[[responseObject objectForKey:@"response"] objectForKey:@"data"] objectForKey:@"list"];
-        NSLog(@"JSON: %@", responseObject);
-        NSLog(@"return: %@", [[[responseObject objectForKey:@"response"] objectForKey:@"data"] objectForKey:@"list"]);
+        self.listItemData = [[[responseObject objectForKey:@"response"] objectForKey:@"data"] objectForKey:@"list"];
+        [PersistenceUtil SaveArray:self.listItemData];
         [self.tableView reloadData];
         [MBProgressHUD hideHUDForView:self.view animated:YES];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -92,9 +98,8 @@
         UINavigationController *nav = [segue destinationViewController];
         ItemViewController *itemViewController = [nav topViewController];
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSLog(@"2: %@", [self.listItemArrayFromAFNetworking objectAtIndex:indexPath.row]);
-        NSDictionary *data =[self.listItemArrayFromAFNetworking objectAtIndex:indexPath.row];
-        itemViewController.data = data;
+        NSDictionary *data =[self.listItemData objectAtIndex:indexPath.row];
+        itemViewController.itemData = data;
     }
 }
 

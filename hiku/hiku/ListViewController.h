@@ -10,5 +10,5 @@
 
 @interface ListViewController : UITableViewController
 // OS: data container for the table
-@property (strong, nonatomic) NSArray *listItemArrayFromAFNetworking;
+@property (strong, nonatomic) NSArray *listItemData;
 @end

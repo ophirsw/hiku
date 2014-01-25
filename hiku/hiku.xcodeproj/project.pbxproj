@@ -14,7 +14,6 @@
 		2D8FEAA61890B97700CDC130 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2D8FEAA41890B97700CDC130 /* InfoPlist.strings */; };
 		2D8FEAA81890B97700CDC130 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8FEAA71890B97700CDC130 /* main.m */; };
 		2D8FEAAC1890B97700CDC130 /* com_hiku_AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8FEAAB1890B97700CDC130 /* com_hiku_AppDelegate.m */; };
-		2D8FEAAF1890B97700CDC130 /* huku.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2D8FEAAD1890B97700CDC130 /* huku.xcdatamodeld */; };
 		2D8FEAB11890B97700CDC130 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D8FEAB01890B97700CDC130 /* Images.xcassets */; };
 		2D8FEAB81890B97800CDC130 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D8FEAB71890B97800CDC130 /* XCTest.framework */; };
 		2D8FEAB91890B97800CDC130 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D8FEA991890B97700CDC130 /* Foundation.framework */; };
@@ -25,6 +24,7 @@
 		2D8FEACF1890B9DF00CDC130 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D8FEACE1890B9DF00CDC130 /* Storyboard.storyboard */; };
 		2D8FEAD71890C1FA00CDC130 /* ItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8FEAD61890C1FA00CDC130 /* ItemViewController.m */; };
 		2D8FEADA1890C22500CDC130 /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8FEAD91890C22500CDC130 /* ListViewController.m */; };
+		2D9408A818937DB900EA6AA4 /* PersistenceUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D9408A718937DB900EA6AA4 /* PersistenceUtil.m */; };
 		2DA8BBD21891A0F1001CCDD2 /* GetParamsUrlUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DA8BBD11891A0F1001CCDD2 /* GetParamsUrlUtil.m */; };
 		2DA8BC551891A313001CCDD2 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DA8BC431891A313001CCDD2 /* AFHTTPRequestOperation.m */; };
 		2DA8BC561891A313001CCDD2 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DA8BC451891A313001CCDD2 /* AFHTTPRequestOperationManager.m */; };
@@ -36,6 +36,7 @@
 		2DA8BC5C1891A313001CCDD2 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DA8BC521891A313001CCDD2 /* AFURLResponseSerialization.m */; };
 		2DA8BC5D1891A313001CCDD2 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DA8BC541891A313001CCDD2 /* AFURLSessionManager.m */; };
 		2DEE1E4F1892008C00AE7083 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DEE1E4E1892008C00AE7083 /* MBProgressHUD.m */; };
+		2DEE1E521893584700AE7083 /* hiku.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2DEE1E501893584700AE7083 /* hiku.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,7 +61,6 @@
 		2D8FEAA91890B97700CDC130 /* hiku-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "hiku-Prefix.pch"; sourceTree = "<group>"; };
 		2D8FEAAA1890B97700CDC130 /* com_hiku_AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = com_hiku_AppDelegate.h; sourceTree = "<group>"; };
 		2D8FEAAB1890B97700CDC130 /* com_hiku_AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = com_hiku_AppDelegate.m; sourceTree = "<group>"; };
-		2D8FEAAE1890B97700CDC130 /* huku.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = huku.xcdatamodel; sourceTree = "<group>"; };
 		2D8FEAB01890B97700CDC130 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2D8FEAB61890B97800CDC130 /* hikuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = hikuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D8FEAB71890B97800CDC130 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -72,6 +72,8 @@
 		2D8FEAD61890C1FA00CDC130 /* ItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemViewController.m; sourceTree = "<group>"; };
 		2D8FEAD81890C22500CDC130 /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
 		2D8FEAD91890C22500CDC130 /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
+		2D9408A618937DB900EA6AA4 /* PersistenceUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersistenceUtil.h; sourceTree = "<group>"; };
+		2D9408A718937DB900EA6AA4 /* PersistenceUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersistenceUtil.m; sourceTree = "<group>"; };
 		2DA8BBD01891A0F1001CCDD2 /* GetParamsUrlUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetParamsUrlUtil.h; sourceTree = "<group>"; };
 		2DA8BBD11891A0F1001CCDD2 /* GetParamsUrlUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetParamsUrlUtil.m; sourceTree = "<group>"; };
 		2DA8BC421891A313001CCDD2 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFHTTPRequestOperation.h; path = hiku/AFHTTPRequestOperation.h; sourceTree = SOURCE_ROOT; };
@@ -95,6 +97,7 @@
 		2DA8BC541891A313001CCDD2 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFURLSessionManager.m; path = hiku/AFURLSessionManager.m; sourceTree = SOURCE_ROOT; };
 		2DEE1E4D1892008C00AE7083 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		2DEE1E4E1892008C00AE7083 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		2DEE1E511893584700AE7083 /* hiku.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = hiku.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,13 +161,13 @@
 		2D8FEAA11890B97700CDC130 /* hiku */ = {
 			isa = PBXGroup;
 			children = (
+				2DEE1E501893584700AE7083 /* hiku.xcdatamodeld */,
 				2DB974B31890C76400064E0D /* Util */,
 				2DB974B21890C74400064E0D /* View */,
 				2D8FEAAA1890B97700CDC130 /* com_hiku_AppDelegate.h */,
 				2D8FEAAB1890B97700CDC130 /* com_hiku_AppDelegate.m */,
 				2D8FEACE1890B9DF00CDC130 /* Storyboard.storyboard */,
 				2D8FEAB01890B97700CDC130 /* Images.xcassets */,
-				2D8FEAAD1890B97700CDC130 /* huku.xcdatamodeld */,
 				2D8FEAA21890B97700CDC130 /* Supporting Files */,
 			);
 			path = hiku;
@@ -244,6 +247,8 @@
 				2DEE1E4E1892008C00AE7083 /* MBProgressHUD.m */,
 				2DA8BBD01891A0F1001CCDD2 /* GetParamsUrlUtil.h */,
 				2DA8BBD11891A0F1001CCDD2 /* GetParamsUrlUtil.m */,
+				2D9408A618937DB900EA6AA4 /* PersistenceUtil.h */,
+				2D9408A718937DB900EA6AA4 /* PersistenceUtil.m */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -355,9 +360,10 @@
 				2DA8BC5B1891A313001CCDD2 /* AFURLRequestSerialization.m in Sources */,
 				2D8FEAD71890C1FA00CDC130 /* ItemViewController.m in Sources */,
 				2D8FEAAC1890B97700CDC130 /* com_hiku_AppDelegate.m in Sources */,
-				2D8FEAAF1890B97700CDC130 /* huku.xcdatamodeld in Sources */,
+				2DEE1E521893584700AE7083 /* hiku.xcdatamodeld in Sources */,
 				2DA8BC561891A313001CCDD2 /* AFHTTPRequestOperationManager.m in Sources */,
 				2DA8BC591891A313001CCDD2 /* AFSecurityPolicy.m in Sources */,
+				2D9408A818937DB900EA6AA4 /* PersistenceUtil.m in Sources */,
 				2DA8BC5C1891A313001CCDD2 /* AFURLResponseSerialization.m in Sources */,
 				2DA8BC551891A313001CCDD2 /* AFHTTPRequestOperation.m in Sources */,
 				2DEE1E4F1892008C00AE7083 /* MBProgressHUD.m in Sources */,
@@ -575,14 +581,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		2D8FEAAD1890B97700CDC130 /* huku.xcdatamodeld */ = {
+		2DEE1E501893584700AE7083 /* hiku.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				2D8FEAAE1890B97700CDC130 /* huku.xcdatamodel */,
+				2DEE1E511893584700AE7083 /* hiku.xcdatamodel */,
 			);
-			currentVersion = 2D8FEAAE1890B97700CDC130 /* huku.xcdatamodel */;
-			path = huku.xcdatamodeld;
-			sourceTree = "<group>";
+			currentVersion = 2DEE1E511893584700AE7083 /* hiku.xcdatamodel */;
+			path = hiku.xcdatamodeld;
+			sourceTree = SOURCE_ROOT;
 			versionGroupType = wrapper.xcdatamodel;
 		};
 /* End XCVersionGroup section */

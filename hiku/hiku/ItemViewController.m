@@ -15,7 +15,7 @@
 @implementation ItemViewController
 
  // OS: getters and setters for data
-@synthesize data;
+@synthesize itemData;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,8 +28,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    labelName_Value.text = [data objectForKey:@"name"];
-    labelAisleName_Value.text = [data objectForKey:@"aisleName"];
+    labelName_Value.text = [itemData objectForKey:@"name"];
+    labelAisleName_Value.text = [itemData objectForKey:@"aisleName"];
 	// Do any additional setup after loading the view.
 }
 
