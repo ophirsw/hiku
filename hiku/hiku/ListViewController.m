@@ -86,6 +86,7 @@
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager GET:APIGetListURL parameters:[GetParamsUrlUtil GetParamsUrl] success:^(AFHTTPRequestOperation *operation, id responseObject) {
         self.listItemData = [[[responseObject objectForKey:@"response"] objectForKey:@"data"] objectForKey:@"list"];
+        [PersistenceUtil SaveCoreData: self.listItemData];
         NSLog(@"response: %@", self.listItemData);
         [self.tableView reloadData];
         [MBProgressHUD hideHUDForView:self.view animated:YES];
@@ -99,7 +100,7 @@
 {
     if ([[segue identifier] isEqualToString:@"ShowDetails"]) {
         UINavigationController *nav = [segue destinationViewController];
-        ItemViewController *itemViewController = [nav topViewController];
+        ItemViewController *itemViewController = (ItemViewController *)[nav topViewController];
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         NSDictionary *data =[self.listItemData objectAtIndex:indexPath.row];
         itemViewController.itemData = data;

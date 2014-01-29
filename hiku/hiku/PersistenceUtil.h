@@ -11,7 +11,6 @@ static NSString *fileName = @"list.dgs";
 
 @interface PersistenceUtil : NSObject
 +(BOOL)SaveCoreData:(NSArray *)list;
-+(NSArray *)LoadCoreData;
-+(NSManagedObjectContext *)managedObjectContex;
++(NSMutableArray *)LoadCoreData;
 + (void)deleteAllObjectsInContext:(NSManagedObjectContext *)context;
 @end

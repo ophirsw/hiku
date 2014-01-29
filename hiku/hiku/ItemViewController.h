@@ -13,6 +13,6 @@
     IBOutlet UILabel *labelName_Value;
     IBOutlet UILabel *labelAisleName_Value;
 }
-@property (strong) NSManagedObject *itemData;
+@property (strong) NSDictionary *itemData;
 
 @end

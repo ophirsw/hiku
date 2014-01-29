@@ -10,13 +10,38 @@
 
 @implementation PersistenceUtil
 
+// OS: save core data to storage
++(BOOL)SaveCoreData:(NSArray *)array;{
+    BOOL result=0;
+    NSManagedObjectContext *context = [self managedObjectContext];
+    [self deleteAllObjectsInContext:context];
+    for (id object in array) {
+        @try {
+            // Create a new managed object
+            NSManagedObject *newItem = [NSEntityDescription insertNewObjectForEntityForName:@"Item" inManagedObjectContext:context];
+            [newItem setValue:[object valueForKey:@"name"] forKey:@"name"];
+        }
+        @catch (NSException * e) {
+            NSLog(@"Exception: %@", e);
+        }
+        @finally {
+        }
+    }
+    NSError *error = nil;
+    // Save the object to persistent store
+    if (![context save:&error]) {
+        NSLog(@"Can't Save! %@ %@", error, [error localizedDescription]);
+    }else{
+        result=1;
+    }
+    return result;
+}
 
 // OS: load core data from storage
-+(NSArray *)LoadCoreData {
-    NSArray * result;
++(NSMutableArray *)LoadCoreData {
+    NSMutableArray * result;
     @try {
         NSManagedObjectContext *context = [self managedObjectContext];
-        [self deleteAllObjectsInContext:context];
         NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Item"];
         result = [[context executeFetchRequest:fetchRequest error:nil] mutableCopy];
     }

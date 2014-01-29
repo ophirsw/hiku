@@ -11,13 +11,14 @@
         <attribute name="product_id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="quantity" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="status" optional="YES" attributeType="Boolean" syncable="YES"/>
-        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ListTags" syncable="YES"/>
+        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ListTags" inverseName="relationship" inverseEntity="ListTags" syncable="YES"/>
     </entity>
     <entity name="ListTags" representedClassName="ListTags" syncable="YES">
         <attribute name="tag" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Item" inverseName="relationship" inverseEntity="Item" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Item" positionX="160" positionY="192" width="128" height="208"/>
-        <element name="ListTags" positionX="322" positionY="354" width="128" height="60"/>
+        <element name="Item" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="ListTags" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>
