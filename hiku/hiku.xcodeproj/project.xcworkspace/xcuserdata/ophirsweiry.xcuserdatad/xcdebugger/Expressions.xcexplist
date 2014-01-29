@@ -3,9 +3,6 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "+[GetListUtil GetList]:GetListUtil.m">
-      </ContextState>
-      <ContextState
          contextName = "-[AFHTTPRequestOperationManager GET:parameters:success:failure:]:AFHTTPRequestOperationManager.m">
          <PersistentStrings>
             <PersistentString
@@ -15,6 +12,23 @@
                value = "[NSURL URLWithString:URLString relativeToURL:self.baseURL] ">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ListViewController tableView:cellForRowAtIndexPath:]:ListViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "+[PersistenceUtil SaveCoreData:]:PersistenceUtil.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[newItem valueForKey:@&quot;name&quot;]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "+[PersistenceUtil LoadCoreData]:PersistenceUtil.m">
+      </ContextState>
+      <ContextState
+         contextName = "+[GetListUtil GetList]:GetListUtil.m">
       </ContextState>
    </ContextStates>
 </VariablesViewState>

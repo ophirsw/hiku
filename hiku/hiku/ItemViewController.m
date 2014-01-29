@@ -28,15 +28,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    labelName_Value.text = [itemData objectForKey:@"name"];
-    labelAisleName_Value.text = [itemData objectForKey:@"aisleName"];
-	// Do any additional setup after loading the view.
+    if (self.itemData) {
+        [labelName_Value setText:[self.itemData valueForKey:@"name"]];
+        [labelAisleName_Value setText:[self.itemData valueForKey:@"aisleName"]];
+    }
+        // Do any additional setup after loading the view.
 }
-
+    
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+    
 @end

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D7F66DA189762C200994303 /* ListTags.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D7F66D9189762C200994303 /* ListTags.m */; };
+		2D7F66DD189762C300994303 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D7F66DC189762C300994303 /* Item.m */; };
 		2D8FEA9A1890B97700CDC130 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D8FEA991890B97700CDC130 /* Foundation.framework */; };
 		2D8FEA9C1890B97700CDC130 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D8FEA9B1890B97700CDC130 /* CoreGraphics.framework */; };
 		2D8FEA9E1890B97700CDC130 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D8FEA9D1890B97700CDC130 /* UIKit.framework */; };
@@ -50,6 +52,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2D7F66D8189762C200994303 /* ListTags.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListTags.h; sourceTree = "<group>"; };
+		2D7F66D9189762C200994303 /* ListTags.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListTags.m; sourceTree = "<group>"; };
+		2D7F66DB189762C300994303 /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
+		2D7F66DC189762C300994303 /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
 		2D8FEA961890B97700CDC130 /* hiku.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hiku.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D8FEA991890B97700CDC130 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2D8FEA9B1890B97700CDC130 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -126,6 +132,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2D7F66D718975F9900994303 /* data model */ = {
+			isa = PBXGroup;
+			children = (
+				2DEE1E501893584700AE7083 /* hiku.xcdatamodeld */,
+				2D7F66DB189762C300994303 /* Item.h */,
+				2D7F66DC189762C300994303 /* Item.m */,
+				2D7F66D8189762C200994303 /* ListTags.h */,
+				2D7F66D9189762C200994303 /* ListTags.m */,
+			);
+			name = "data model";
+			sourceTree = "<group>";
+		};
 		2D8FEA8D1890B97700CDC130 = {
 			isa = PBXGroup;
 			children = (
@@ -161,7 +179,7 @@
 		2D8FEAA11890B97700CDC130 /* hiku */ = {
 			isa = PBXGroup;
 			children = (
-				2DEE1E501893584700AE7083 /* hiku.xcdatamodeld */,
+				2D7F66D718975F9900994303 /* data model */,
 				2DB974B31890C76400064E0D /* Util */,
 				2DB974B21890C74400064E0D /* View */,
 				2D8FEAAA1890B97700CDC130 /* com_hiku_AppDelegate.h */,
@@ -362,10 +380,12 @@
 				2D8FEAAC1890B97700CDC130 /* com_hiku_AppDelegate.m in Sources */,
 				2DEE1E521893584700AE7083 /* hiku.xcdatamodeld in Sources */,
 				2DA8BC561891A313001CCDD2 /* AFHTTPRequestOperationManager.m in Sources */,
+				2D7F66DD189762C300994303 /* Item.m in Sources */,
 				2DA8BC591891A313001CCDD2 /* AFSecurityPolicy.m in Sources */,
 				2D9408A818937DB900EA6AA4 /* PersistenceUtil.m in Sources */,
 				2DA8BC5C1891A313001CCDD2 /* AFURLResponseSerialization.m in Sources */,
 				2DA8BC551891A313001CCDD2 /* AFHTTPRequestOperation.m in Sources */,
+				2D7F66DA189762C200994303 /* ListTags.m in Sources */,
 				2DEE1E4F1892008C00AE7083 /* MBProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

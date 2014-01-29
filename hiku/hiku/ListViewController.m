@@ -12,10 +12,14 @@
 #import "ItemViewController.h"
 #import "MBProgressHUD.h"
 #import "PersistenceUtil.h"
+#import "Item.h"
+#import "ListTags.h"
+#import "com_hiku_AppDelegate.h"
 
 @interface ListViewController ()
-
+@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 @end
+
 
 @implementation ListViewController
 
@@ -34,8 +38,7 @@
 {
     [super viewDidLoad];
      // OS: make async call to populate the data and refresh the ListViewController
-   
-    listItemData = [PersistenceUtil LoadArray];
+    listItemData = [PersistenceUtil LoadCoreData];
     if(self.listItemData == (id)[NSNull null] || [self.listItemData  count] == 0 ){
          [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     }
@@ -73,7 +76,7 @@
     static NSString *CellIdentifier = @"ListItem";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     NSDictionary *tempDictionary= [self.listItemData objectAtIndex:indexPath.row];
-    cell.textLabel.text = [tempDictionary objectForKey:@"name"];
+    cell.textLabel.text = [tempDictionary valueForKey:@"name"];
     return cell;
 }
 
@@ -83,7 +86,7 @@
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager GET:APIGetListURL parameters:[GetParamsUrlUtil GetParamsUrl] success:^(AFHTTPRequestOperation *operation, id responseObject) {
         self.listItemData = [[[responseObject objectForKey:@"response"] objectForKey:@"data"] objectForKey:@"list"];
-        [PersistenceUtil SaveArray:self.listItemData];
+        NSLog(@"response: %@", self.listItemData);
         [self.tableView reloadData];
         [MBProgressHUD hideHUDForView:self.view animated:YES];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -107,6 +110,7 @@
 {
     
 }
+
 
 /*
 // Override to support conditional editing of the table view.

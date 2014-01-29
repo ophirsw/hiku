@@ -1,9 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3401" systemVersion="13A603" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="Entity" syncable="YES"/>
-    <entity name="Entity1" syncable="YES"/>
+    <entity name="Item" representedClassName="Item" syncable="YES">
+        <attribute name="aisle_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="aisleName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="audioPath" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ean" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="flFavorite" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="item_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="product_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="quantity" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="status" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ListTags" syncable="YES"/>
+    </entity>
+    <entity name="ListTags" representedClassName="ListTags" syncable="YES">
+        <attribute name="tag" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <elements>
-        <element name="Entity" positionX="160" positionY="192" width="128" height="45"/>
-        <element name="Entity1" positionX="162" positionY="189" width="128" height="45"/>
+        <element name="Item" positionX="160" positionY="192" width="128" height="208"/>
+        <element name="ListTags" positionX="322" positionY="354" width="128" height="60"/>
     </elements>
 </model>
